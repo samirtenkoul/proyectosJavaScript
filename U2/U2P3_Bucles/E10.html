@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+10.- Una empresa de transportes ha decidido aumentar el sueldo a sus trabajadores si
+cumplen algunas características. Quieren un programa en el que introduciendo la edad
+del trabajador y su sueldo actual sea capaz de informarles del nuevo sueldo que van a
+cobrar. Las características a cumplir y las subidas de sueldo son las siguientes: (las
+características y subidas de sueldo no son acumulativas)
+* >= 40 años cobrando <=999€  aumento 10%
+* >= 50 años cobrando <=999€  aumento 20%
+* >= 50 años cobrando >=1000€ y <=1200€  aumento 15%
+* >= 55 años cobrando <=1499  aumento 10%
+* >= 60 años cobrando <=1499  aumento 15%
+* cualquier otra característica tendrán un aumento de 3%
+
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            var edad = Number(prompt('Introduzca su edad'));
+            var sueldo = Number(prompt('Introduzca su sueldo'));
+
+            if (((edad >= 40) && (edad < 50)) && (sueldo <= 999)) {
+                sueldo = sueldo + 0.1 * sueldo;
+            } else if (((edad >= 50) && (edad < 55)) && (sueldo <= 999)) {
+                sueldo = sueldo + 0.2 * sueldo;
+            } else if (((edad >= 50) && (edad < 55)) && (sueldo >= 1000 && sueldo <= 1200)) {
+                sueldo = sueldo + 0.15 * sueldo;
+            } else if (((edad >= 55) && (edad < 60)) && (sueldo <= 1499)) {
+                sueldo = sueldo + sueldo * 0.1;
+            } else if ((edad >= 60) && (sueldo <= 1499)) {
+                sueldo = sueldo + sueldo * 0.15;
+            } else {
+                sueldo = sueldo + 0.03 * sueldo;
+            }
+            document.write('El sueldo del trabajador ha ascendido a ' + sueldo);
+
+
+        </script>
+    </body>
+</html>

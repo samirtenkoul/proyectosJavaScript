@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!--
+1.- Realiza una página web que muestre un texto.
+Cuando se pulse click con el ratón, modificará el estilo del texto.
+Al menos modificará la fuente, el tamaño y el color. Aprovecha para jugar con los estilos.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            window.onload = function () {
+                //document.getElementById('d1').onclick = cambiarEstilo;
+                var divs = document.getElementsByTagName('div');
+                for (var i = 0; i < divs.length; i++) {
+                    divs[i].onclick = cambiarEstilo;
+                }
+            }
+            function cambiarEstilo(){
+                var id = this.id;
+                if(id == 'd1'){
+                    this.style.fontFamily = "Arial";
+                    this.style.color = "red";
+                    this.style.backgroundColor = "pink";
+                }else if(id == 'd2'){
+                    this.style.fontFamily = "Segoe UI";
+                    this.style.color = "yellow";
+                    this.style.backgroundColor = "blue";    
+                }else {
+                    this.style.fontFamily = "comic sans";
+                    this.style.color = "orange";
+                    this.style.backgroundColor = "green";    
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div id="d1">Texto a cambiar</div>
+        <div id="d2">Texto a cambiar</div>
+        <div id="d3">Texto a cambiar</div>
+    </body>
+</html>

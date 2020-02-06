@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--
+5.- Construye y muestra un triángulo de 7 líneas como el siguiente:
+*
+**
+***
+****
+*****
+******
+*******
+
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            //SOLUCION
+            var cc = "*";
+            for (var i = 0; i < 7; i++) {
+                document.write(cc + "<br/>");
+                cc += "*";
+            }
+            //SOLUCION PINA
+            var puntitos = "";
+            for (var i = 1; i <= 7; i++) {
+                puntitos = puntitos + "*";
+                document.write(puntitos + "<br>");
+            }
+
+        </script>
+    </body>
+</html>

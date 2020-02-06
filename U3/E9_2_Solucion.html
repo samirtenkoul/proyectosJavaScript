@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+   	 <title>Segunda ventana</title>
+    </head>    
+    <body>
+   	 <h3>Ejemplo de Ventana Nueva</h3>
+   	 <script>
+   		 document.write('URL Completa: ' + window.location);
+   		 document.write('<br>Nombre del navegador: ' + navigator.appName);
+   		 
+   		 function javaDisponible() {//Creamos una función par ver si Java está disponible
+   			 var respuesta;
+   			 if(navigator.javaEnabled===true) {
+   				 respuesta = "si";
+   			 } else {
+   				 respuesta = "no";
+   			 }
+   			 
+   			 return respuesta;
+   		 }
+   		 
+   		 document.write('<br>JAVA ' + javaDisponible() + ' disponible en esta ventana<br><br>');   			 
+   	 </script>
+   	 <iframe src="E9_3_Solucion.html" width="800" height="600"> </iframe><!--Elemento incrustado-->
+    </body>
+</html>
+

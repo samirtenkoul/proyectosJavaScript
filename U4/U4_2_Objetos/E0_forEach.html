@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html><head><title>forEach en objetos</title><meta charset="UTF-8"></head>
+    <body>
+        <h3>Sentencia forEach:</h3>
+        <pre><!--texto plano (pre)-->
+            var obj = { a:7,  b:'hi', c:'adiós'};
+            Object.keys(obj).forEach (p => document.writeln("Propiedad " + p + " = " + obj[p] + "<br>"));
+        </pre>
+        <script type="text/javascript">
+
+            var obj = {a: 7, b: 'hi', c: 'adiós'};
+
+            Object.keys(obj).forEach(p => document.writeln("Propiedad " + p + " = " + obj[p] + "<br>"));
+
+        </script>
+    </body>
+</html>

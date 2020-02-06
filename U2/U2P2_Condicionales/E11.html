@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--
+11.- Queremos hacer un programa que indique si un usuario se puede descargar un juego con PEGI 18.
+Para ello se pedirá por pantalla nombre, edad y si tiene permiso paterno (por defecto será NO). 
+Siempre se pedirán los 3 datos, independientemente de que sea mayor de edad.
+El programa comprobará si es mayor de edad y si no lo es comprobará si tiene o no permiso paterno 
+y mostrará en la pantalla  uno de los siguientes mensajes:
+Te llamas … tienes … años. Eres mayor de edad. Puedes descargarte el juego
+Te llamas … tienes … años. Eres menor de edad. Tienes permiso paterno. Puedes descargarte el juego
+Te llamas … tienes … años. Eres menor de edad. NO Puedes descargarte el juego
+Observaciones:
+Para pasar una cadena a mayúsculas se usa la función cadena.toUpperCase();
+Tienes que utilizar alguno de los operadores lógicos && ||
+
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            var nombre = prompt("Introduzca su nombre");
+            var edad = prompt("Introduzca su edad");
+            var permiso = prompt("¿Tiene permiso de sus padres (SI/NO)? NO");
+            permiso = permiso.toUpperCase();
+            
+            if(edad >= 18){
+                document.write("Te llamas "+nombre+", tienes "+edad+" años.<br/>");
+                document.write("Puedes descargarte el juego.");
+            }else {
+                if(permiso === "SI"){
+                    document.write("Te llamas "+nombre+", tienes "+edad+" años.<br/>");
+                    document.write("Eres menor de edad y tienes permiso paterno. Puedes descargarte el juego.");
+                }else {
+                    document.write("Te llamas "+nombre+", tienes "+edad+" años.<br/>");
+                    document.write("Eres menor de edad pero no tienes permiso paterno. No puedes descargarte el juego");
+                }
+            }
+            
+        </script>
+    </body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--
+1.
+
+a)Crea el objeto Coche con las propiedades Marca, Modelo, Año de fabricación y etiqueta.
+
+b)Añade un método CalcularEtiqueta (La etiqueta será B si el coche es anterior al año 2000
+y C si es del año 2000 o posterior). 
+
+c)Utiliza el código empleado para la generación de las cuatro instancias del objeto Coche.
+
+Queremos que que los valores de cada una de sus propiedades se impriman en una tabla HMTL (<table>).
+
+d) Se creará el método ImprimeFilaCoche.Utilice la generación de código HTML desde código JavaScript.
+Cada instancia del objeto debe ocupar una línea (<tr>) y el valor de cada propiedad debe ocupar 
+una celda (<td>) de dicha línea. 
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            //crear un objeto haciendo una función constructor
+            function coche (marca, modelo, año){
+                this.marca = marca;
+                this.modelo = modelo;
+                this.año = año;
+                this.Etiqueta = Etiqueta;
+                this.imprime = imprime;
+            }
+            
+            function Etiqueta (){
+                if (this.año < 2000){
+                    this.etiqueta = "B";
+                }else {
+                    this.etiqueta = "C";
+                }
+            }
+            function imprime (){
+                document.write("<tr>");
+                document.write("<td>" + this.marca + "</td><td>" + this.modelo + "</td>" + "<td>" + this.año + "</td>" + "<td>" + this.etiqueta + "</td>");
+                document.write("</tr>")
+            }
+            
+            //c)
+            var coches = new Array();
+            coches.push(new coche("Ferrari", "Scaglietti", "2010"));
+            coches.push(new coche("BMW", "Z4", "2010"));
+            coches.push(new coche("Seat", "Toledo", "1999"));
+            coches.push(new coche("Fiat", "500", "1995"));
+            for (var i = 0; i < coches.length; i++) {
+                coches[i].Etiqueta();
+            }
+            document.write("<table border=1>");
+            document.write("<tr><th>Marca</th><th>Modelo</th><th>Año</th><th>Etiqueta</th></tr>")
+                for (var i = 0; i < coches.length; i++) {
+                    coches[i].imprime();
+}
+            document.write("</table>");
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

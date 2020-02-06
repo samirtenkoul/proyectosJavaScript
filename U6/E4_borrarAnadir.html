@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="UTF-8">
+    <title>JavaScript and the DOM</title>
+    <link rel="stylesheet" href="./E3_AñadirElemento/css/style.css">
+    <script>
+      window.addEventListener("load",iniciar);
+
+      function iniciar (){
+        document.getElementsByClassName("botonAnadir")[0].addEventListener("click", anadir);
+        document.getElementsByClassName("borrarPrimero")[0].addEventListener("click", borrarPrim);
+        document.getElementsByClassName("borrarUltimo")[0].addEventListener("click", borrarUlt);
+      
+    }
+
+      function anadir (){
+        var fila = document.createElement("li");
+        var valor = document.createTextNode(document.getElementsByClassName("AnadirElemento")[0].value);
+        fila.appendChild(valor);
+        document.getElementsByTagName("ul")[0].appendChild(fila);    
+      }
+
+      function borrarPrim (){
+          var primero = document.getElementsByTagName("ul")[0].firstElementChild;
+          document.getElementsByTagName("ul")[0].removeChild(primero);
+      }
+
+      function borrarUlt (){
+        var ultimo = document.getElementsByTagName("ul")[0].lastElementChild;
+          document.getElementsByTagName("ul")[0].removeChild(ultimo);
+      }
+    </script>
+  </head>
+  <body>
+    <h1 id="encabezado">DOM en JavaScript. Añadir elemento </h1>
+    <div class="lista">
+      <p class="description">Cosas que son violeta:</p>
+      <ul>
+        <li>ciruelas</li>
+        <li>amatista</li>
+        <li>lavanda</li>
+        <li>berenjena</li>
+      </ul>
+      <input type="text" class="AnadirElemento">
+      <button class="botonAnadir">Añadir</button>
+      <button class="borrarPrimero">Borrar Primero</button>
+      <button class="borrarUltimo">Borrar Ultimo</button>   
+    </div>
+  </body>
+</html>
+

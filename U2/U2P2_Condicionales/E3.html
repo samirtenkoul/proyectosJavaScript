@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<!--
+3.- Introduciendo un número comprendido entre 0 y 999. Indica cuantas cifras tiene ese número, 
+utilizando el método length (ej. numero.length)
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            do {
+                var num = prompt("Introduzca un numero");
+                if(num < 0 || num > 999){
+                    alert("Error, el numero debe estar comprendido entre 0 y 999");
+                }
+                alert ("El numero " + num + " tiene " + num.length + " cifras");
+            }while(num < 0 || num > 999)
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

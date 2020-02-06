@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!--
+1.- Simular un examen tipo test de cinco preguntas con tres respuestas cada pregunta,
+donde las respuestas posibles vengan dadas en diferentes select.
+Al final del examen habrá un botón Validar que nos dirá cuántas preguntas hemos
+acertado. 
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function resolver() {
+                var suma = 0;
+                var respuestas = document.getElementsByTagName('select');
+                for (var i = 0; i < respuestas.length; i++) {
+                    if (respuestas[i].value === 'correcta') {
+                        suma++;
+                    }
+                }
+                if (suma === 1) {
+                    alert('Has acertado ' + suma + ' pregunta');
+                } else {
+                    alert('Has acertado ' + suma + ' preguntas');
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Traduce al inglés</h1>
+        <form>
+            Ordenador Portatil
+            <select id="p1">
+                <option value="incorrecta">Computer</option>
+                <option value="correcta">Laptop</option>
+                <option value="incorrecta">Portable</option>
+            </select>
+            Disco Duro
+            <select id="p2">
+                <option value="correcta">Hard Disk</option>
+                <option value="incorrecta">Memory</option>
+                <option value="incorrecta">Device</option>
+            </select>
+            Monitor
+            <select id="p3">
+                <option value="incorrecta">Pantalla</option>
+                <option value="incorrecta">Screen</option>
+                <option value="correcta">Monitor</option>
+            </select>
+            Cascos
+            <select id="p4">
+                <option value="incorrecta">Helmet</option>
+                <option value="correcta">Headphones</option>
+                <option value="incorrecta">Auriculares</option>
+            </select>
+            Tarjeta de sonido
+            <select id="p5">
+                <option value="incorrecta">Device</option>
+                <option value="incorrecta">Software</option>
+                <option value="correcta">Sound card</option>
+            </select>
+            <input type="submit" value="Resolver" onclick="resolver()"/>
+        </form>
+    </body>
+</html>

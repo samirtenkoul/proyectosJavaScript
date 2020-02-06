@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!--
+10.- Modifica el ejercicio 4  que dice:
+    “4.- Modifica el ejercicio 3 de la práctica 1 que dice: 
+        “3.- Se pedirá a partir de una ventana emergente (prompt()) el nombre y la edad. Mostrará una ventana emergente indicando: te llamas … y tienes …. años”
+        En este caso mostrará una ventana emergente indicando: 
+        Te llamas … 
+        Tienes …. años
+    Y añade: Eres mayor/menor de edad  (será mayor de edad si tiene al menos 18 años)”
+
+para que, en lugar de mostrar la información en una ventana emergente, 
+añada esa información en la página web y luego la imprima.
+
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            var nombre = prompt("Introduzca su nombre");
+            var edad = prompt("Introduzca su edad");
+            if (edad >= 18) {
+                document.write("Te llamas " + nombre + "\nTienes " + edad + " años \nEres mayor de edad");
+                print();
+            } else {
+                document.write("Te llamas " + nombre + "\nTienes " + edad + " años \nEres menor de edad");
+                print();
+            }
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!--
+2.- Crea un nuevo fichero HTML y escribe el siguiente código de JavaScript dentro 
+del cuerpo de la página. Antes de ejecutarlo, 
+qué valor crees que saldrá en la ventana emergente.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>saludando...</h1>
+        <script>
+            var primer_saludo = "hola";
+            var segundo_saludo = primer_saludo;
+            primer_saludo = "hello";
+            alert(segundo_saludo);
+            /*aparece "hola" ya que es secuencial y segundo saludo
+             * se ha igualado al primero antes de cambiar el valor
+             * del primero
+             * (segundo_saludo = primer_saludo;) 
+            */
+        </script>    
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--
+4.- Escribe un programa que muestre por pantalla una tabla de multiplicar.
+Para ello,pedirá al usuario que introduzca un número entre 2 y 10. 
+Si el número no está entre estos dos valores, se le seguirá pidiendo hasta que 
+introduzca el valor correcto. Una vez haya introducido un valor entre 2 y 10, 
+se mostrará por consola la tabla de multiplicar del número elegido.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+              //SOLUCION  
+            do {
+                var numero = Number(prompt("Introduzca un numero"));
+                if (numero < 2 || numero > 10) {
+                    alert("Error, debe introducir un numero entre 2 y 10");
+                } else {
+                    document.write("<table border='1'>")
+                    for (var i = 1; i <= 10; i++) {
+                        document.write("<tr><td>" + numero + " x " + i + " = " + (numero * i) + "</td></tr>");
+                    }
+                    document.write("</table>");
+                }
+            } while (numero < 2 || numero > 10);
+
+            //SOL SUSANA
+            var resultado = "";
+            var numero = 0; // Valor inicial que permite entrar en el bucle
+
+            while (numero < 2 || numero > 10) {
+                numero = Number(prompt("Elige una tabla de multiplicar entre 2 y 10"));
+            }
+            var i = 1; // Variable contador. Usamos el incremento para obtener el valor de cada vuelta
+            while (i <= 10) {
+                resultado = resultado + "<br>" + numero + " * " + i + " = " + numero * i;
+                i++;
+            }
+            document.write(resultado);    
+        </script>
+    </body>
+</html>

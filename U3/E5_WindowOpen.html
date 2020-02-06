@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--
+5- Realizar una página que abra una nueva ventana en el navegador de forma aleatoria. El valor aleatorio
+debe estar entre 0 y 2. Si se genera el 0 llamar a educamadrid, si se genera el 1 al de Gmail y si se 
+genera el 2 al aula virtual del IES.
+Es obligatorio utilizar la función random del objeto Math.
+Una vez abierta preguntará si quieres abrir otra. El programa continuará hasta que pulse cancelar
+
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            var cc = Math.round(Math.random()*2);
+            switch(cc){
+                case 0:
+                    window.open("https://www.educa2.madrid.org/educamadrid/","Educamadrid");
+                    break;
+                case 1:
+                    window.open("https://mail.google.com/mail/u/0/#","Gmail");
+                    break;
+                case 2:
+                    window.open("https://aulavirtual33.educa.madrid.org/ies.palomerasvallecas.madrid","AulaVirtual");
+                    break;
+            }
+        </script>
+    </body>
+</html>

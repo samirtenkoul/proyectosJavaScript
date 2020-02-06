@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--
+5.-Crea un script que tome una serie de palabras introducidas por el usuario 
+y almacene esas palabras en un array. Posteriormente, manipule ese array 
+para mostrar en una nueva ventana los siguientes datos. : 
+a. La primera palabra introducida por el usuario. 
+b. La última palabra introducida por el usuario. 
+c. El número de palabras presentes en el array. 
+d. Todas las palabras ordenadas alfabéticamente. 
+e.- Visualizarlas todas separadas por un – 
+f.- Extraer el segundo y tercer elemento en otro array y visualizarlo. 
+g.- Insertar 2 nuevos elementos en la tercera posición. 
+
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function palabras(){
+                var palabras = new Array();
+                do{
+                    var palabra = prompt("Introduzca una palabra");
+                    if (palabra != null){
+                        palabras.push(palabra);
+                    }
+                }while(palabra != undefined);
+                //a. La primera palabra introducida por el usuario. 
+                document.write(palabras[0] + "<br/>");
+                //b. La última palabra introducida por el usuario.
+                document.write(palabras[palabras.length -1] + "<br/>"); 
+                //c. El número de palabras presentes en el array.
+                document.write(palabras.length + "<br/>"); 
+                //d. Todas las palabras ordenadas alfabéticamente.
+                palabras.sort();
+                document.write(palabras + "<br/>");
+                //e.- Visualizarlas todas separadas por un –
+                document.write(palabras.join(" - ") + "<br/>"); 
+                //f.- Extraer el segundo y tercer elemento en otro array y visualizarlo.
+                var palabras2 = palabras.slice(1, 3);//para sacar la 2 posicion ponemos 3 ya que la 2 desaparece
+                document.write(palabras2 + "<br/>");
+                //g.- Insertar 2 nuevos elementos en la tercera posición.
+                palabras.splice(1,2,"Ana","Pepe");
+                document.write(palabras);
+            }
+        </script>
+    </head>
+    <body>
+        <script>
+            palabras();
+        </script>
+    </body>
+</html>

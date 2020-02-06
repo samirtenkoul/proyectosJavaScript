@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--
+12.- A partir del ejercicio 11 “Queremos hacer un programa que indique si un usuario se puede descargar un juego con PEGI 18.”
+Realiza las modificaciones necesarias para que sólo pregunte si tienes permiso paterno en el caso de ser menor de edad.
+Observaciones: No hace falta usar && o ||
+
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            var nombre = prompt("Introduzca su nombre");
+            var edad = prompt("Introduzca su edad");
+
+            if (edad >= 18) {
+                document.write("Te llamas " + nombre + ", tienes " + edad + " años.<br/>");
+                document.write("Puedes descargarte el juego.");
+            } else {
+                var permiso = prompt("¿Tiene permiso de sus padres (SI/NO)? NO");
+                permiso = permiso.toUpperCase();
+                if (permiso === "SI") {
+                    document.write("Te llamas " + nombre + ", tienes " + edad + " años.<br/>");
+                    document.write("Eres menor de edad y tienes permiso paterno. Puedes descargarte el juego.");
+                } else {
+                    document.write("Te llamas " + nombre + ", tienes " + edad + " años.<br/>");
+                    document.write("Eres menor de edad pero no tienes permiso paterno. No puedes descargarte el juego");
+                }
+            }
+
+        </script>
+    </body>
+</html>
+

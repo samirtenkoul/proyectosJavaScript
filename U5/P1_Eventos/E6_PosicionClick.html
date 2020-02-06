@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!--
+6.- Realiza una página en Javascript que muestre una caja, queremos que en esa 
+caja:
+
+Al mover el ratón en cualquier punto de la ventana del navegador, se muestre 
+la posición del puntero respecto del navegador y respecto de la página
+
+Al pulsar cualquier tecla, el mensaje mostrado debe cambiar para indicar 
+el nuevo evento y su información asociada.
+
+Cuando se pulsa un botón del ratón, el color de fondo del cuadro de mensaje 
+debe ser amarillo (#FFFFCC) y cuando se pulsa una tecla, el color de fondo 
+debe ser azul (#CCE6FF). 
+
+Al volver a mover el ratón, el color de fondo vuelve a ser blanco. 
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            #caja {
+                width: 175px;
+                height: 150px;
+                padding:  20px;
+                border: 1px solid black;
+            }
+        </style>
+        <script>
+            window.onload = function () {
+                window.onmousemove = posicion;
+                window.onkeydown = tecla;
+                window.onclick = clik;
+                /*
+                 document.getElementById('caja').onmousemove = posicion;
+                 document.getElementById('caja').onkeydown = tecla;//no funciona con element
+                 document.getElementById('caja').onclick = clik;
+                 */
+            }
+            function posicion() {
+                var x = window.event.clientX;
+                var y = window.event.clientY;
+                document.getElementById('caja').style.backgroundColor = 'white';
+                var caja = document.getElementById('caja');
+                caja.innerHTML = "<h1>Raton</h1>x: " + x + " <br> y: " + y;
+            }
+            function tecla() {
+                //var tecla = a.key;//para hacerlo asi habria que pasar a como parametro de entrada a la funcion tecla
+                var tecla = event.key;
+                document.getElementById('caja').style.backgroundColor = '#CCE6FF';
+                var caja = document.getElementById('caja');
+                caja.innerHTML = "<h1>Teclado</h1>Tecla pulsada: " + tecla;
+            }
+            function clik() {
+                var x = window.event.clientX;//para que sigan saliendo las coordenadas
+                var y = window.event.clientY;//para que sigan saliendo las coordenadas
+                document.getElementById('caja').style.backgroundColor = '#FFFFCC';
+                var caja = document.getElementById('caja');
+                caja.innerHTML = "<h1>Raton</h1>¡CLICK!<br>x: " + x + " <br> y: " + y;
+            }
+        </script>
+    </head>
+    <body>
+        <div id="caja">Caja</div>
+    </body>
+</html>

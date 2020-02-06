@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--
+4.-A partir del Siguiente array: 
+var palabras=new Array ( 'botella', 'zeta', 'androide', 'minuto'); 
+Realiza una función que ordene alfabéticamente sus elementos utilizando 
+el método designado para ello y muestre el resultado por pantalla, 
+cada componente del array en una línea.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function ordArray(palabras) {
+                document.write("Array antes de ordenar </br>");
+                for (var i = 0; i < palabras.length; i++) {
+                    document.write(palabras[i] + "<br>");
+                }
+                palabras.sort();
+                
+                document.write("Array ordenado </br>");
+                for (var i = 0; i < palabras.length; i++) {
+                    document.write(palabras[i] + "<br>");
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <script>
+            var palabras = new Array('botella', 'zeta', 'androide', 'minuto');
+            ordArray(palabras);
+        </script>
+    </body>
+</html>

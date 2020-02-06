@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=utf-8 />
+        <title>Probar eventos...</title>
+        <script type="text/javascript">
+            window.onload = function () {
+                document.getElementById('caja4').onclick = cambiartexto2;
+            }
+
+            function cambiartexto(elemento) {
+                elemento.innerHTML = 'Texto cambiado desde una funcion';
+            }
+
+            function cambiartexto2() {
+                this.innerHTML = "texto cambiado por manejador de eventos semantico";
+            }
+
+        </script>
+    </head> 
+    <body>
+        <div id="caja1" onclick= "document.getElementById('caja1').innerHTML = 'Texto cambiado';"> 
+            Pincha sobre caja1...
+        </div>
+        <div id="caja2" onclick= "this.innerHTML = 'Texto cambiado utilizando this';"> 
+            Pincha sobre caja2...
+        </div>
+        <div id="caja3" onclick= "cambiartexto(this)"> 
+            Pincha sobre caja3...
+        </div>
+        <div id="caja4" > 
+            Pincha sobre caja4...
+        </div>
+    </body>
+</html>

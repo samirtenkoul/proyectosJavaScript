@@ -1,0 +1,39 @@
+<!--
+1.- Realiza un programa que Programa que calcula la media de una evaluación. 
+Para ello, se pedirán 6 notas (de una en una) y al finalizar nos mostrará la media que vamos a tener.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            var contador = 1;
+            var nota;
+            var total = 0;
+            while (contador <= 6) {
+                nota = prompt("Introduzca la nota " + contador,0);
+                total += Number(nota);
+                contador++;
+            }
+            var media = total / 6;
+            document.write("Su media es de " + media);
+
+            /*SOL SUSANA
+            var nombre;
+            var contador = 1;
+            var total = 0;
+            while (contador <= 6)
+            {
+                nota = prompt('Nota asignatura:' + contador, 0);
+                total = total + Number(nota); // No hace falta usar Number()
+                contador = ++contador;
+            }
+            media = total / 6;
+            alert('La media de las notas es ' + media);
+            */
+        </script>
+    </body>
+</html>

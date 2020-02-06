@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+        //FORMAS DE CREAR OBJETOS
+            //1. objeto
+            var miCoche = new Object();
+            miCoche.color = "blanco";
+            miCoche.modelo = "Seat León";
+            //2.
+            var miCoche = { color: "blanco", modelo: "Seat León"};
+            //3. función constructor
+            function Coche(color, modelo) {
+            this.color = color;
+            this.modelo = modelo; 
+            }
+            //instancia funcion Coche
+            var micoche = new Coche("blanco", "Seat León");
+            //document.write(micoche.matricula);
+
+            //Añadir nuevas caracteristicas al objeto coche con prototype
+            Coche.prototype.matricula = null;//a todos los objetos
+            //miCoche.matricula = null;//a uno en concreto solo
+            micoche.matricula ="1234 BZX";//le damos el valor 
+            document.write(micoche.matricula);
+        //DEFINIENDO METODOS
+            function imprimir() {
+            alert(" modelo" + this.modelo + "color " + this.color + " motor" + this.motor);
+            }
+            function Coche(color, modelo, motor) {
+                this.color = color;
+                this.modelo = modelo;
+                this.motor = motor;
+                this.imprimir = imprimir;
+            }
+        </script>
+    </body>
+</html>

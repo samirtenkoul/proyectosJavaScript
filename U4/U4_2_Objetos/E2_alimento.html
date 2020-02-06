@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+2.- Crea un script que defina un objeto llamado Producto_alimenticio.
+Este objeto debe presentar las propiedades código, nombre y precio, 
+además del método imprimeDatos, el cual escribe por pantalla los valores 
+de sus propiedades. 
+
+Posteriormente, cree tres instancias de este objeto, la información se 
+pedirá con prompt() y se guardará en un array. 
+Con la ayuda del bucle for, utilice el método imprimeDatos para mostrar 
+por pantalla los valores de los tres objetos.  Se deben presentar los productos así:
+
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function alimento(cod, nombre, precio){
+                this.cod = cod;
+                this.nombre = nombre;
+                this.precio = precio;
+                this.imprime = imprime;
+            }
+            function imprime (){
+                document.write("Codigo: " + this.cod + "<br/>");
+                document.write("Nombre: " + this.nombre + "<br/>");
+                document.write("Precio: " + this.precio + "<br/>");
+            }
+        </script>
+    </head>
+    <body>
+        <script>
+            var productos = new Array(3);
+            
+            for (var i = 0; i < productos.length; i++) {
+                cod = prompt("Codigo del producto:");
+                nombre = prompt("Nombre del producto");
+                precio = prompt("Precio del producto");
+                productos[i] = new alimento(cod, nombre, precio);
+            }
+            for (var j = 0; j < productos.length; j++) {
+                document.write("<h2>Producto " + (j+1) +"</h2><br/>");
+                productos[j].imprime();
+            }
+        </script>
+    </body>
+</html>

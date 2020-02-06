@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--
+2.- Cree un script que solicite un valor numérico al usuario en decimal y posteriormente muestre en la 
+página web (utilizando document.write()) su equivalente en octal, binario y hexadecimal. 
+Se debe comprobar que el valor introducido es un número y que el número es menor de 256 y en su caso, 
+mostrar el error en la web. Codifica utilizando funciones.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function conversor() {
+                do {
+                    var numero = Number(prompt("Introduzca un número"));
+                    if (isNaN(numero)) {
+                        alert("Error, debe introducir un numero ");
+                    } else if (numero > 255) {
+                        alert("Error, de introducir un numero menor que 256");
+                    } else {
+                        document.write('El numero ' + numero + ' en octal = ' + numero.toString(8) + '<br>');
+                        document.write('El numero ' + numero + ' en binario = ' + numero.toString(2) + '<br>');
+                        document.write('El numero ' + numero + ' en hexadecimal = ' + numero.toString(16) + '<br>');
+                    }
+                } while (isNaN(numero) || numero > 255);
+
+            }
+        </script>
+    </head>
+    <body>
+        <script>
+            conversor();
+        </script>
+    </body>
+</html>

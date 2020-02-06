@@ -1,0 +1,49 @@
+<!--
+2.-Realiza un script que tenga una clase llamada  inverso,  en la que asigne el color de fondo
+a negro y el color del texto a blanco.
+Inicialmente la página tendrá un texto libre con el fondo blanco y el color del texto negro 
+(colores por defecto), además deberá tener un botón, cuyo texto será Fondo Oscuro. 
+Al pulsar sobre el botón deberá asignar al body de la página los valores de la clase inverso 
+y el texto del botón será Fondo Claro.
+Cuando pulse sobre el botón con el texto Fondo Claro, revertirá los cambios.
+
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">B
+        <title>P6E2</title>
+        <script>
+            window.addEventListener("load",inverso);
+
+            function inverso() {
+                document.getElementsByTagName("button")[0].addEventListener("click",color);
+            }
+
+            //var aux = true;
+                
+            function color(){
+                if (document.getElementsByTagName("button")[0].innerHTML==="fondo oscuro") {
+                    document.getElementsByTagName("body")[0].style.backgroundColor="black";
+                    document.getElementsByTagName("body")[0].style.color="white";
+                    document.getElementsByTagName("button")[0].innerHTML="fondo claro";
+                    //aux = false;
+                }else {
+                    document.getElementsByTagName("body")[0].style.backgroundColor="white";
+                    document.getElementsByTagName("body")[0].style.color="black";
+                    document.getElementsByTagName("button")[0].innerHTML="fondo oscuro";
+                    //aux = true;    
+                }
+            }
+        </script> 
+    </head>
+    <body>
+        parrafo 1 <br/>
+        parrafo 2 <br/>
+        parrafo 3 <br/>
+        parrafo 4 <br/>
+        <button>fondo oscuro</button>
+    </body>
+</html>

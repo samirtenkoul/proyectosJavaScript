@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--
+1.- Hacer un programa que nos indique cuantos días quedan para que vengan los Reyes Magos.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            //SOLUCION
+            var hoy = new Date();
+            var reyes = new Date(2020, 0, 6);//mes 0-11, dias 1-31.
+            var restantes = (reyes - hoy) / 86400000;//milisegundos tiene un año
+            document.write("Quedan "+Math.round(restantes)+" dias para que vengan los Reyes magos");
+
+            //SOL SUSANA
+            alert("La fecha actual es: " + hoy.toDateString());//imprimir fecha 
+            var tiempo_restante = Math.round((reyes - hoy) / (1000 * 60 * 60 * 24));//milisegundos
+            alert("Quedan " + tiempo_restante + " dias para que vengan los Reyes Magos");
+
+            //SOL CLASE
+            var hoy = new Date();
+            //Creo la variable reyes, con la fecha en la que vienen, pero
+            // tambien para que sirva en los proximos años
+            var reyes = new Date(new Date().getFullYear() + 1, 0, 6);
+            //86400000 es el total de multiplicar milisegundos * segundos
+            // * minutos,etc...
+            var diasRestantes = Math.round((reyes - hoy) / 86400000);
+            //Redondeamos los dias para que quede más bonito.
+            alert(`Quedan ${diasRestantes} días para que vengan los Reyes Magos.`);
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!--
+9.Realizar una aplicación en JavaScript que realice lo siguiente:
+(Se recomienda el uso de Google Chrome y desactivar los pop-ups)
+Al abrirse la página principal, nos pida los siguientes datos en el mismo orden:
+- Nombre
+- Apellidos
+- Fecha de nacimiento (Formato dd/mm/yyyy)
+Una vez solicitados los datos, imprimirá por pantalla lo siguiente:
+<h1>Práctica 2 DWEC</h1>
+Buenos días, XXXXXXX
+Tu nombre completo (nombres y apellidos) tiene XXX caracteres, incluidos espacios
+La primera letra ‘A’ de tu nombre está en la posición XXXX
+La última letra ‘A’ de tu nombre está en la posición XXXX
+Tu nombre menos las tres primeras letras es XXXXXXXXXXXXXXXXXX
+Tu edad es XXXX años
+Naciste un feliz día de XXXXXX (estación del año) del año XXXXXXX
+Donde aparecen ‘X’ tendrá que aparecer el texto/cálculo correspondiente
+
+Debajo del texto mostrado en pantalla, aparecerá un botón que al pulsarlo abrirá una
+nueva ventana con las siguientes características:
+<h3>Ejemplo de Ventana Nueva</h3>
+URL Completa: XXXXXXX
+Nombre del navegador: XXXXXX
+JAVA XXX disponible en esta ventana (poniendo SÍ o NO dependiendo si está
+disponible o no)
+Debajo de este texto, se abrirá un iframe de 800X600
+
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            var nombre = prompt("Introduzca su nombre");
+            var apellidos = prompt("Introduzca sus apellidos");
+            var fnac = prompt("Introduzca su fecha de nacimiento en el formato dd/nn/yyyy");
+            var nom = nombre.concat(" ", apellidos);
+
+            document.write("<h2>Practica 2 DWEC</h2>");
+            document.write("Buenos dias " + nom + "<br/>");
+            document.write("Tu nombre completo tiene " + ((nombre.length) + (apellidos.length) + 1) + " caracteres <br/>");
+            var hay = false;
+            for (var i = 0; i < nom.length && hay === false; i++) {
+                if (nom.charAt(i) === 'a' || nom.charAt(i) === 'A') {
+                    document.write("La primera letra 'a' de tu nombre esta en la posicion " + (i + 1) + "<br/>");
+                    hay = true;
+                }
+            }
+            hay = false;
+            for (var i = nom.length; i > 0 && hay === false; i--) {
+                if (nom.charAt(i) === 'a' || nom.charAt(i) === 'A') {
+                    document.write("La ultima letra 'a' de tu nombre esta en la posicion " + (i + 1) + "<br/>");
+                    hay = true;
+                }
+            }
+            document.write("Tu nombre menos las tres primeras letras es " + (nom.substring(3, nom.length)) + "<br/>");
+
+            var fech = fnac.split("/");
+            var dia = parseInt(fech[0]);
+            var mes = parseInt(fech[1]) - 1;
+            var año = parseInt(fech[2]);
+            var fech_nac = new Date(año, mes, dia);
+            
+            var hoy = new Date();
+            año = hoy.getFullYear();
+            año_nac = fech_nac.getFullYear();
+            document.write("Tienes " + (año - año_nac) + " años <br/>");
+
+            var mesEstacion = fech_nac.getMonth();
+            var estacion;
+
+            if (mesEstacion >= 2 && mesEstacion < 5) {
+                estacion = "primavera";
+            } else if (mesEstacion >= 5 && mesEstacion < 8) {
+                estacion = "verano";
+            } else if (mesEstacion >= 8 && mesEstacion < 11) {
+                estacion = "otoño";
+            } else {
+                estacion = "invierno";
+            }
+            document.write("Naciste un feliz dia de "+estacion+ " del año "+año_nac+"<br/>");
+        </script>
+        <!--Boton con direccionamiento a otra web-->
+        <input type="button" name="ventana" value="ventana" onclick="window.open('E9_2_Solucion.html','width=400px height=400px')"/>
+    </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="UTF-8">
+    <title>JavaScript and the DOM</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+      window.addEventListener("load",iniciar);
+
+      function iniciar (){
+        document.getElementsByClassName("botonAnadir")[0].addEventListener("click", anadir);
+      
+    }
+
+      function anadir (){
+        var fila = document.createElement("li");
+        var valor = document.createTextNode(document.getElementsByClassName("AnadirElemento")[0].value);
+        fila.appendChild(valor);
+        document.getElementsByTagName("ul")[0].appendChild(fila);    
+      }
+    </script>
+  </head>
+  <body>
+    <h1 id="encabezado">DOM en JavaScript. Añadir elemento </h1>
+    <div class="lista">
+      <p class="description">Cosas que son violeta:</p>
+      <ul>
+        <li>ciruelas</li>
+        <li>amatista</li>
+        <li>lavanda</li>
+        <li>berenjena</li>
+      </ul>
+      <input type="text" class="AnadirElemento">
+      <button class="botonAnadir">Añadir</button>   
+    </div>
+  </body>
+</html>

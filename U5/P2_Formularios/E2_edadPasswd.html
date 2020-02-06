@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+2.- Simular un pequeño formulario que contenga las siguientes partes: 
+- Una pregunta de si el usuario es mayor de edad con las posibles respuestas en 
+forma de radio button 
+- Dos campos: uno para introducir la contraseña y otro para verificar si la 
+contraseña es la misma 
+- Un botón que verifique la solución al formulario: nos dirá si es mayor de 
+edad o no y si las contraseñas introducidas son las mismas o no
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function validar(){
+                if(document.getElementById("mayor").checked &&
+   		   (document.getElementById('pass1').value==document.getElementById('pass2').value)){
+   			 alert('Eres mayor de edad y las contraseñas coinciden');
+   		 }else if(document.getElementById("mayor").checked &&
+   		     	(document.getElementById('pass1').value!=document.getElementById('pass2').value)){
+   			 alert('Eres mayor de edad pero las contraseñas no coinciden');
+   		 }else if(document.getElementById("menor").checked &&
+   		     	(document.getElementById('pass1').value==document.getElementById('pass2').value)){
+   			 alert('Las contraseñas coinciden pero no eres mayor de edad');
+   		 }else{
+   			 alert('No eres mayor de edad y las contraseñas no coinciden');
+   		 }
+            }
+        </script>
+    </head>
+    <body>
+        <form>
+            <b>¿Eres mayor de edad?</b><br>
+            <input type="radio" name="edad" id="mayor" required/>Sí<br>
+                <input type="radio" name="edad" id="menor" required/>No<br>
+            <b>Introduce la contraseña</b><br>
+                <input type="password" id="pass1" required/><br> 
+            <b>Confirme la contraseña</b><br>
+                <input type="password" id="pass2" required/><br>
+            <input type="submit" value="Validar" onclick="validar()"/>    
+        </form>
+    </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--
+5.- Pide una nota (número). Muestra la calificación según la nota:
+	0-4: Insuficiente
+	5: Suficiente
+	6: Bien
+	7-8: Notable
+	9-10: Sobresaliente
+	Tienes que utilizar el condicional if
+
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            nota = prompt("Introduce la nota");
+            if( nota < 5){
+                document.write("Insuficiente");
+            }else if ( nota == 5) {
+                document.write("Aprobado");
+            }else if ( nota == 6) {
+                document.write("Bien");
+            }else if ( nota == 7 || nota === 8) {
+                document.write("Notable");
+            }else if (nota == 9 || nota === 10){
+                document.write("Sobresaliente")
+            }else {
+                document.write("Error, nota incorrecta")
+            }
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

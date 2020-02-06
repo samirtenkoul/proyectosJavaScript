@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!--
+7.- Realiza un programa en javascript que tenga la función palabra_mas_grande, en la que el usuario 
+introduzca una frase y muestre con alert cual es la palabra más grande
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            do{
+                var frase = prompt("Introduzca una frase");
+                var frases = frase.split(" ");
+                if(frase == "" || frase == undefined || frases.length < 2){
+                    alert("Debe introducir una frase de mas de una palabra");
+                }else {
+                    var palabra = frases[0];
+                    for (var i = 0; i < frases.length; i++) {
+                         if(frases[i].length > palabra.length){
+                            palabra = frases[i];
+                         }
+                    }
+                    document.write("La palabra mas grande de " + frases.join(" ") + " es "+ palabra);
+                }
+            }while (frase == "" || frase == undefined || frases.length < 2);
+        </script>
+    </body>
+</html>

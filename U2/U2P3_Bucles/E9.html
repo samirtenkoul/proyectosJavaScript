@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--
+9.- Crear un bucle desde 1 hasta 20 donde se muestre únicamente los números que 
+son múltiplos de un número introducido por pantalla y la cantidad (total) de números que 
+no son múltiplos. NOTA: Aplicar módulo %
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            var mult = "";
+            var contador = 0;
+            var num = prompt("Introduzca un numero");
+            for (var i = 0; i < 20; i++) {
+                if (i % num === 0) {
+                    if (mult === "") {
+                        mult = i;
+                    } else {
+                        mult = mult + ", " + i;
+                    }
+                } else {
+                    contador++;
+                }
+            }
+            alert("Los numeros del 1 al 20 multiplos de " + num + " son " + mult);
+            alert("Hay un total de " + contador + " numeros del 1 al 20 no multiplos de " + num);
+        </script>
+    </body>
+</html>

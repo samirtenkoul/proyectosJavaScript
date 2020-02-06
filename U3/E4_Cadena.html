@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--
+4.- Cargar un String por teclado e implementar las siguientes funcionalidades:
+- Imprimir la primera mitad de los caracteres de la cadena
+- Imprimir el último carácter
+- Imprimir la cadena en forma inversa
+- Imprimir cada carácter del String separado con un guión
+- Imprimir la cantidad de vocales almacenadas
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            var cadena = prompt("Introduzca un texto:");
+            //Imprimir la primera mitad de los caracteres de la cadena
+            document.write(cadena.toString().substr(0, (cadena.length / 2)) + "<br/>");
+            
+            //Imprimir el último carácter
+            document.write(cadena.toString().charAt(cadena.length - 1) + "<br/>");
+            
+            //Imprimir la cadena en forma inversa
+            document.write(cadena.toString().split("").reverse().join("")+"<br/>");
+            
+            //Imprimir cada carácter del String separado con un guión
+            document.write(cadena.split("").join("-")+"<br/>");
+            
+            //Imprimir la cantidad de vocales almacenadas
+            document.write(cadena.match(/[aeiou]/gi).length);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!--
+3.- Crea un programa que introduzca por pantalla una frase y muestre el número
+de caracteres de la frase y el texto formateado de la siguiente manera:
+En cursiva,  En negrita, en rojo, tamaño de fuente de 18, En mayúsculas, 
+fuente de 15 y mayúsculas. Para escribir en la página
+Utiliza el método document.write 
+
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            var cadena = prompt("Introduce una frase:");
+            document.write("Numero de letras de la cadena: "+cadena.length+"<br/>");
+            document.write("Cursiva : "+cadena.italics()+"<br/>");
+            document.write("Negrita : "+cadena.bold()+"<br/>");
+            document.write("En rojo : "+cadena.fontcolor("red")+"<br/>");
+            document.write("Tamaño fuente 18 : "+cadena.fontsize(18)+"<br/>");
+            document.write("En mayusculas : "+cadena.toUpperCase()+"<br/>");
+            document.write("Tamaño fuente 15 y mayusculas : "+cadena.fontsize(15).toUpperCase()+"<br/>");
+        </script>
+    </body>
+</html>

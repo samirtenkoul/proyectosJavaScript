@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+3.-  Realiza un script que pida cadenas de texto  hasta que se pulse “cancelar”. 
+Al salir con “cancelar” deben mostrarse todas las cadenas concatenadas con un guión -
+
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            var resultado = "";
+            do {
+                var cadena = prompt("Introduce una cadena");
+                if(resultado === ''){
+                    resultado = resultado + cadena;
+                }else {
+                    resultado = resultado + '-' + cadena;
+                }
+            }while(confirm("Desea continuar?"));
+            
+            document.write(resultado);    
+//            var resultado = "";
+//            do {
+//            //PEDIMOS LA CADENA POR TECLADO
+//            var cadena = prompt("Introduce una cadena");
+//            //SI LA VARIABLE RESULTADO ESTÁ VACÍA
+//            if (resultado === "") {
+//                //CONCATENAMOS SIN UTILIZAR GUIÓN
+//                resultado = resultado + cadena;
+//            } else {
+//                //CONCATENAMOS CON GUIÓN
+//                resultado = resultado + "-" + cadena;
+//                }
+//                //MIENTRAS SE PULSE ACEPTAR EN EL MENSAJE EMERGENTE CONFIRM
+//            }
+//            while (confirm("Desea seguir?"));
+//            // } while (cadena != null);
+//            // } while (cadena != Undefined);
+//
+//            //alert(resultado);
+//            document.write(resultado);
+
+        </script>
+    </body>
+</html>

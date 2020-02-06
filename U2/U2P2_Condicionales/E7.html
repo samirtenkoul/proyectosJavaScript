@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--
+7.- Escribe un programa que pida al usuario un día de la semana y 
+que muestre por consola el día siguiente. Si se introduce un valor 
+que no corresponda a un día de la semana, se le mostrará un mensaje al usuario.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            var dia = prompt("Introduzca un dia de la semana");
+            switch (dia) {
+                case "lunes":
+                    alert("Mañana sera martes");
+                    break;
+                case "martes":
+                    alert("Mañana sera miercoles");
+                    break;
+                case "miercoles":
+                    alert("Mañana sera jueves");
+                    break;
+                case "jueves":
+                    alert("Mañana sera viernes");
+                    break;
+                case "viernes":
+                    alert("Mañana sera sabado");
+                    break;
+                case "sabado":
+                    alert("Mañana sera domingo");
+                    break;
+                case "domingo":
+                    alert("Mañana sera lunes");
+                    break;
+                default:
+                    alert("Error, dia incorrecto");
+                    break;
+            }
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

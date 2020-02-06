@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>ut3-09-GenerarPagDatosPersonales.html</title>
+    </head>
+    <body>   	 
+   	 <script type="text/javascript">
+   		 var nombre = prompt('Introduce tu nombre','');
+   		 var apellidos = prompt('Introduce tus apellidos','');
+   		 var fecha = prompt('Introduce tu fecha de nacimiento','dd/mm/aaaa');
+   		 var fechaNueva;
+   		 
+   		 var fechaArray = fecha.split("/");//Creo el objeto fecha a partir de un array   			 
+   		 var dia = parseInt(fechaArray[0]);
+   		 var mes = parseInt(fechaArray[1])-1;//resta -> meses 0 = Enero
+   		 var anio = parseInt(fechaArray[2]);
+   		 var espacio = " ";
+   		 var cadena = nombre.concat(espacio,apellidos);//Concatenamos la cadena nombre y apellidos
+   		 
+   		 fechaNueva = new Date(anio,mes,dia);   			 
+   		 
+   		 document.write('<h1>Práctica 2 DWEC</h1>');
+   		 
+   		 document.write('</br>Buenos días, ' + cadena);//Imprime tu nombre completo
+   			 
+   		 function contadorCaracteres() {//Creo una función para contar los caracteres   			 
+   			 var longitud = cadena.length;
+   			 return longitud;
+   		 }   	 
+   		 
+   		 document.write('</br>Tu nombre completo tiene ' + contadorCaracteres() + ' caracteres, incluyendo espacios');
+   		 
+   		 function primeraLetraA() {//Busca la primera letra de tu nombre
+   			 
+   			 var cadenaMinusculas = cadena.toLowerCase();
+   			 
+   				 for(var i = 0 ; i < cadenaMinusculas.length ; i++ ) {
+   					 if(cadenaMinusculas.charAt(i)=='a') {
+   						 var posicion = i + 1 ;
+   						 break;
+   					 } else {}
+   				 }
+   				 return posicion;   			 
+   		 }
+   		 
+   		 document.write('<br>La primera letra A de tu nombre está en la posición ' + primeraLetraA() );
+   		 
+   		 function ultimaLetraA() {
+   			 var cadenaMinusculas = cadena.toLowerCase();
+   			 
+   				 for(var i = 0 ; i < cadenaMinusculas.length ; i++ ) {
+   					 if(cadenaMinusculas.charAt(i)=='a') {
+   						 var posicion = i + 1 ;
+   					 } else {}
+   				 }
+   				 return posicion;   			 
+   		 }
+   		 
+   		 document.write('<br>La última letra A de tu nombre está en la posición ' + ultimaLetraA() )
+   		 
+   		 function nombreSinTresLetras() {//Imprime el nombre sin las tres primeras letras
+   			 var cadenaReducida = cadena.substring(3,cadena.length);
+   			 return cadenaReducida;
+   		 }
+   		 
+   		 document.write('<br>Tu nombre menos las tres primeras letras es ' + nombreSinTresLetras());
+   		 
+   		 function calculaEdad() {//Calcula la edad
+   			 var hoy = new Date();
+   			 anioIntroducido = fechaNueva.getYear();
+   			 anioActual = hoy.getYear();
+   			 var edad = anioActual - anioIntroducido;
+   			 return edad;
+   		 }
+   		 
+   		 document.write('<br>Tu edad es ' + calculaEdad());   		 
+   		 
+   		 function calculaEstacion() {//Calcula la estación del año
+   			 var mesEstacion = fechaNueva.getMonth();
+   			 var estacion;
+   			 
+   			 if(mesEstacion>=2 && mesEstacion<5 ) {
+   				 estacion = "primavera";
+   			 } else if(mesEstacion>=5 && mesEstacion<8) {
+   				 estacion = "verano";
+   			 } else if(mesEstacion>=8 && mesEstacion<11) {
+   				 estacion = "otoño";
+   			 } else {
+   				 estacion = "invierno";
+   			 }   			 
+   			 return estacion;
+   		 }
+   		 
+   		 document.write('<br>Naciste un feliz día de ' + calculaEstacion() + ' del año ' + fechaNueva.getYear());
+   		 
+   		 function abrirVentana() {//Abre una nueva ventana
+   			 var nuevaVentana;   			 
+   			 nuevaVentana=window.open("E9_2_Solucion.html","segundaVentana")
+   		 }
+   	 </script>    
+   	 <br><br>
+   	 <input type="button" name="nuevaVentana" value="Abrir ventana" onclick="abrirVentana()"/>
+    </body>
+</html>
+

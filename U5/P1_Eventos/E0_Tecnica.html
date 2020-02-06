@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->         
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            //1. Asignar un identificador único al elemento XHTML
+            //  < div id = "caja4" >
+            //2. Crear una función de JavaScript encargada de manejar el evento.
+                //function cambiartexto2(){ this.innerHTML = "Texto modificado.";}
+            /*3. Asignar la función externa al evento document.getElementById('caja4').onclick = cambiartexto2;
+                OJO!! Para poder utilizar este método es necesario que la página esté cargada
+                totalmente.Solución (Observa que creamos una función anónima):*/
+            window.onload = function () {
+                document.getElementById('caja4').onclick = cambiartexto2;
+            }
+            function cambiartexto2(){ this.innerHTML = "Texto modificado.";}
+
+        </script>
+    </head>
+    <body>
+        <div id="caja4">TODO write content</div>
+    </body>
+</html>

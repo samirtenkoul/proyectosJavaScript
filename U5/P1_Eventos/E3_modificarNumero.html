@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--
+3.- Realiza una página web que muestre un número dentro de un div y responda a los siguientes eventos de la 
+siguiente manera:
+- Cuando haga doble click, calculará el triple del número
+- Cuando haga click incrementará/decrementará el tamaño del número
+- Cuando pase el ratón por encima cambiará de color (fondo y fuente) y cuando salga volverá a su color 
+original.
+-->
+<html>
+    <head>
+        <title>E3_modificarNumero</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            window.onload = iniciar;
+            function iniciar() {
+                document.getElementsByTagName("div")[0].ondblclick = producto;
+                document.getElementsByTagName("div")[0].onclick = tamano;
+                document.getElementsByTagName("div")[0].onmouseover = cambiarColor;
+                document.getElementsByTagName("div")[0].onmouseout = recuperarColor;
+            }
+            function producto() {
+                this.innerHTML *= 3;
+            }
+            function tamano() {
+                if (this.style.fontSize == "") {
+                    this.style.fontSize = "xx-large";
+                } else {
+                    this.style.fontSize = "";
+                }
+            }
+            function cambiarColor (){
+                this.style.backgroundColor = "black";
+                this.style.color = "white";
+            }
+            function recuperarColor (){
+                this.style.backgroundColor = "white";
+                this.style.color = "black";
+            }
+        </script>
+    </head>
+    <body>
+        <div>4</div>
+    </body>
+</html>

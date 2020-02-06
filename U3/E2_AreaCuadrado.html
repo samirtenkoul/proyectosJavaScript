@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!--
+2.- Hacer un programa que calcule el área de un cuadrado a partir del valor de
+uno de sus lados.No se puede calcular como lado*lado. 
+Hay que utilizar la función correspondiente del objeto Math. 
+Comprobar que introduce un número como lado
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            do {
+                var lado = prompt("Introduzca el lado de un cuadrado en cm");
+                if (isNaN(lado)) {
+                    alert("Debe introducir un numero válido");
+                }else {
+                    var area = Math.pow(lado,2);
+                    alert("Área = lado² = "+lado+"² = "+area+"cm²");
+                }
+            } while (isNaN(lado));
+        </script>
+    </body>
+</html>

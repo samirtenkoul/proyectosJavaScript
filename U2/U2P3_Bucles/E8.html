@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--
+8.- Crear un programa que, a partir de dos listas de 3 valores cada una 
+(se pedirán los valores utilizando prompt()),
+informe cual de estas dos listas tiene un valor acumulado mayor (también pueden ser iguales)
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            var L1 = 0;
+            var L2 = 0;
+            for (var i = 0; i < 6; i++) {
+            if (i < 3) {
+            L1 += parseInt(prompt("Introduzca un valor de la primera lista"));
+            } else {
+            L2 += parseInt(prompt("Introduzca un valor de la segunda lista"));
+            }
+            }
+            if (L1 > L2){
+                alert("El valor acumulado de la lista 1 (" + L1 + ") es mayor que el de la lista 2 (" + L2 + ")");
+            } else if (L2 > L1){
+                alert("El valor acumulado de la lista 2 (" + L2 + ") es mayor que el de la lista 1 (" + L1 + ")");
+            } else{
+                alert("El valor acumulado de la lista 1 (" + L1 + ") es igual que el de la lista 2 (" + L2 + ")");
+            }
+        </script>
+    </body>
+</html>

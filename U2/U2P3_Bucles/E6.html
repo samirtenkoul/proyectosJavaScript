@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--
+6.- Escribe un programa que identifique la talla de una prenda de ropa a partir de las tallas europeas. 
+Los valores de las tallas europeas serían: XXL, XL, L, M, S, XS. 
+La talla esperada sería: Grande, Mediana y Pequeña.
+La conversión de valores sería:
+Grande:  XXL, XL, L
+Mediana: M
+Pequeña:S,XS
+Una vez traducida se pedirá confirmación. El programa se realizará hasta pulsemos 
+cancelar a la confirmación
+
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            //SOLUCION
+            var talla;
+            do {
+                talla = prompt("Introduzca una talla europea", "XS,S,M,L,XL ó XXL").toString().toUpperCase();
+                switch (talla) {
+                    case 'XS':
+                        alert('Ha elegido una talla pequeña');
+                        break;
+                    case 'S':
+                        alert('Ha elegido una talla pequeña');
+                        break;
+                    case 'M':
+                        alert('Ha elegido una talla mediana');
+                        break;
+                    case 'L':
+                        alert('Ha elegido una talla grande');
+                        break;
+                    case 'XL':
+                        alert('Ha elegido una talla grande');
+                        break;
+                    case 'XXL':
+                        alert('Ha elegido una talla grande');
+                        break;
+                    default:
+                        alert('Error, la talla ' +talla+ ' es incorrecta');
+                        break;
+                }
+            } while (confirm("¿Desea continuar?"));
+        </script>
+    </body>
+</html>

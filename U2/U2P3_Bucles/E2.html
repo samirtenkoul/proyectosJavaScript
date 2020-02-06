@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+2. Realiza una modificación al ejercicio anterior con un  número indefinido de notas. Finalizaremos cuando no escribamos nada
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+
+            var contador = 1;
+            var total = 0;
+            var nota = 0;
+            do {
+                nota = prompt('Introduzca la nota' + contador);
+                total = total + Number(nota);
+                contador++;
+            } while (nota !== '');
+
+            var media = total / contador;
+            (typeof(media) === 'number') ? alert ("Su media es de " + media):
+                   alert("Error, se ha introducido algun valor incorrecto") 
+            
+            //SOL SUSANA
+            var contador = 1;
+            var total = 0;
+            var nota = 0;
+            do {
+                nota = prompt('Nota asignatura:' + contador, "");
+                if (Number(nota)) {
+                    total = total + Number(nota);
+                    contador = ++contador;
+                }
+            } while (nota != "")
+            media = total / contador;
+            (typeof (media) === 'number') ? alert('La media de las notas es ' + media) :
+                    alert('se ha introducido algun valor incorrecto');
+
+
+        </script>
+    </body>
+</html>

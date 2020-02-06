@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--
+3.- Escribe una función que recibe como parámetro un número entero y devuelve como resultado una cadena 
+que indica si el número es par o impar. Muestre el resultado por pantalla a través del método alert().
+Recuerda que puede ser útil el uso del operador módulo %. Debes comprobar que haya introducido un número.
+Para las sentencias condicionales utiliza el operador condicional ?:
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function parImpar() {
+                var aux = false;
+                do {
+                    var numero = prompt("Introduzca un numero entero");
+                    
+                    if (numero === "" || numero === null) {
+                        alert("Debe introducir un numero");
+                    } else {
+                        if (!isNaN(Number(numero))) {
+                            if (!(Number(numero)%1 == 0)) {
+                                alert("Debe introducir un numero entero");
+                            } else {
+                                if (Number(numero) % 2 === 0) {
+                                    alert("El numero " + numero + " es par");
+                                    aux = true;
+                                } else if (Number(numero) % 2 !== 0) {
+                                    alert("El numero " + numero + " es impar");
+                                    aux = true;
+                                }
+                            }
+                        } else {
+                            alert("Debe introducir un numero");
+                        }
+                    }
+                } while (aux === false);
+            }
+        </script>
+    </head>
+    <body>
+        <script>
+            parImpar();
+        </script>
+    </body>
+</html>

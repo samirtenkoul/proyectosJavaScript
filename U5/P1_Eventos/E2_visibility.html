@@ -1,0 +1,67 @@
+<!--
+2.-A partir de la página web proporcionada, completar el código JavaScript para que:
+
+1.Cuando se pinche sobre el primer enlace, se oculte su sección relacionada
+2.Cuando se vuelva a pinchar sobre el mismo enlace, se muestre otra vez esa sección de contenidos 
+(pista: propiedad style.display o style.visibility )
+3.Completar el resto de enlaces de la página para que su comportamiento sea idéntico al del primer enlace
+4.Cuando una sección se oculte, debe cambiar el mensaje del enlace asociado (pista: propiedad innerHTML)
+
+2 soluciones: 
+solucion1 manejando los eventos como atributos XHTML
+solucion2 utilizando manejadores de eventos semánticos
+
+-->
+<html>
+    <head>
+        <meta charset=utf-8 />
+        <title>Trabajo con eventos ocultar mostrar parrafos</title>
+        <script type="text/javascript">
+            
+            
+            window.onload = iniciar;
+            
+            function iniciar (){
+                //inicializar variables a enlaces
+                var enlaces = document.getElementsByTagName('a');
+                for (var i = 0; i < enlaces.length; i++) {
+                    enlaces[i].onclick = muestraOculta;
+                }
+            }
+            
+            function muestraOculta() {
+                var idEnlace = this.id;
+                var trozos = idEnlace.split('_');
+                var pNumero = trozos[1];
+                var parrafo = document.getElementById("contenidos_" + pNumero);
+                
+                //display none = ocultar
+                if (parrafo.style.display == "" || parrafo.style.display == "block") {
+                    parrafo.style.display = 'none';
+                    this.innerHTML  = "Mostrar Contenido";
+                }else {
+                    parrafo.style.display = 'block';
+                    this.innerHTML  = "Ocultar Contenido";
+                }
+                /*Oculta el texto pero no el espacio del parrafo
+                if (parrafo.style.visibility == "" || parrafo.style.visibility == "visible") {
+                    parrafo.style.visibility = 'hidden';
+                    this.innerHTML  = "Mostrar Contenido";
+                }else {
+                    parrafo.style.visibility = 'visible';
+                    this.innerHTML  = "Ocultar Contenido";
+                }*/
+            }
+        </script>
+    </head>
+    <body>
+        <p id="contenidos_1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed mattis enim vitae orci. Phasellus libero. Maecenas nisl arcu, consequat congue, commodo nec, commodo ultricies, turpis. Quisque sapien nunc, posuere vitae, rutrum et, luctus at, pede. Pellentesque massa ante, ornare id, aliquam vitae, ultrices porttitor, pede. Nullam sit amet nisl elementum elit convallis malesuada. Phasellus magna sem, semper quis, faucibus ut, rhoncus non, mi. Duis pellentesque, felis eu adipiscing ullamcorper, odio urna consequat arcu, at posuere ante quam non dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis scelerisque.</p>
+        <a id="enlace_1" href="#">Ocultar contenidos</a>
+        <br />
+        <p id="contenidos_2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed mattis enim vitae orci. Phasellus libero. Maecenas nisl arcu, consequat congue, commodo nec, commodo ultricies, turpis. Quisque sapien nunc, posuere vitae, rutrum et, luctus at, pede. Pellentesque massa ante, ornare id, aliquam vitae, ultrices porttitor, pede. Nullam sit amet nisl elementum elit convallis malesuada. Phasellus magna sem, semper quis, faucibus ut, rhoncus non, mi. Duis pellentesque, felis eu adipiscing ullamcorper, odio urna consequat arcu, at posuere ante quam non dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis scelerisque.</p>
+        <a id="enlace_2" href="#">Ocultar contenidos</a>
+        <br />
+        <p id="contenidos_3">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed mattis enim vitae orci. Phasellus libero. Maecenas nisl arcu, consequat congue, commodo nec, commodo ultricies, turpis. Quisque sapien nunc, posuere vitae, rutrum et, luctus at, pede. Pellentesque massa ante, ornare id, aliquam vitae, ultrices porttitor, pede. Nullam sit amet nisl elementum elit convallis malesuada. Phasellus magna sem, semper quis, faucibus ut, rhoncus non, mi. Duis pellentesque, felis eu adipiscing ullamcorper, odio urna consequat arcu, at posuere ante quam non dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis scelerisque.</p>
+        <a id="enlace_3" href="#">Ocultar contenidos</a>
+    </body>
+</html>

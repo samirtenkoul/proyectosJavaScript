@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--
+5.- Realizar un script que muestre la tecla pulsada de teclado. 
+Si pulsa control, alt o shift, mostrará también con qué tecla la combina.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            window.onload = function(){
+                window.onkeydown = mostrarTecla;
+            }
+            var tecla = '';
+            function mostrarTecla (a){
+                if (a.code == 'ShiftLeft' || a.code == 'ShiftRight') {
+                    tecla += "Shift + ";
+                }else if (a.code == 'ControlLeft' || a.code == 'ControlRight') {
+                    tecla += "Ctrl + ";
+                }else if (a.code == 'AltLeft' || a.code == 'AltRight') {
+                    tecla += 'Alt + ';
+                }else {
+                    tecla += a.keyCode;
+                    var caja = document.getElementsByTagName('div')[0];
+                    caja.innerHTML = "Has pulsado " + tecla;
+                    tecla = '';
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div>Tecla pulsada</div>
+    </body>
+</html>

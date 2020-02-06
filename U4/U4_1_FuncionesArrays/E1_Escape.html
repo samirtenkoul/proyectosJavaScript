@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<!--
+1.- Realiza un script que, a partir de un array de vocales con tilde y utilizando el método 
+document.write() muestre por pantalla la codificación de todas las vocales con tilde, tal y 
+como te muestro. Recuerda que para obtener dicha codificación debes usar la función escape() 
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>VOCALES</h1>
+        <script>
+            var vocales = new Array("á","é","í","ó","ú");
+            document.write("Vocal con tilde - Codificación Unicode<br/>");
+            for (var i = 0; i < vocales.length; i++) {
+                document.write(vocales[i] + " - ");
+                document.write(escape(vocales[i])+ "<br/>");
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        //Eventos de raton
+        onclick: Botón izquierdo del ratón.
+        ondblclick: Doble clic
+        onmousedown/onmouseup: Pulsar/soltar un botón del ratón
+        onmouseover/onmouseout: El puntero del ratón entra/sale fuera de un elemento
+        onmousemove: cuando se mueve el puntero dentro de un elemento.El evento se 
+        produce continuamente mientras el ratón permanezca dentro del elemento 
+                
+        //Eventos del teclado
+        onkeydown Cuando se pulsa o mantiene pulsada una tecla. El evento se produce hasta que la soltemos
+        onkeypress Cuando se pulsa o mantiene pulsada una tecla alfanumérica
+        onkeyup Cuando se libera una tecla pulsada
+
+        Las propiedades de event para los eventos de teclado son:
+        El código numérico de la tecla pulsada (keyCode)
+        El código unicode del carácter correspondiente a la tecla pulsada (charCode),
+        El elemento que origina el evento (target)
+
+        Otras para identificar si hemos pulsado:
+        shift (shiftKey)
+        control (ctrlKey)
+        alt (altKey)
+        meta(metaKey).
+
+Cuando pulsamos una tecla que corresponda a un carácter alfanumérico, la secuencia 
+de eventos es la siguiente: keydown, keypress, keyup.
+
+En el caso de pulsar una tecla que no corresponda a un
+carácter alfanumérico, la secuencia de eventos es:
+keydown, keyup.
+
+Además existe la posibilidad de que dejemos una tecla
+pulsada.
+    Si es con carácter alfanumerico, se repiten de forma continua los eventos 
+    keydown, keypress.
+
+    En caso de que no sea alfanumerico se repite de forma continuada el evento 
+    keydown solamente.
+    </body>
+</html>

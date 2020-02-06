@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--
+7.- Realiza un diccionario español -inglés que traduzca 5 palabras básicas de nuestro vocabulario.
+Una vez traducida se pedirá confirmación. El programa se realizará hasta pulsemos cancelar a la 
+confirmación
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            var palabra;
+            do{
+                palabra = prompt("Introduzca una de estas palabras : hola, rojo, gato, perro ó verde");
+                switch(palabra){
+                    case "hola":
+                        alert(palabra + " en ingles es HELLO");
+                        break;
+                    case "rojo":
+                        alert(palabra + " en ingles es RED");
+                        break;
+                    case "gato":
+                        alert(palabra + " en ingles es CAT");
+                        break;
+                    case "perro":
+                        alert(palabra + " en ingles es DOG");
+                        break;
+                    case "verde":
+                        alert(palabra + " en ingles es GREEN");
+                        break;
+                    default:
+                        alert(palabra + " no esta en el diccionario");
+                        break;
+                }
+            }while(confirm("¿Desea continuar?"));
+        </script>
+    </body>
+</html>
