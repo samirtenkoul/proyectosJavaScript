@@ -1,0 +1,30 @@
+<!--
+Ejercicio 1
+Crea un fichero de texto que contenga tu nombre y apellidos. Realiza una página web que tenga un botón Cargar, al hacer click en el botón accederá de forma asíncrona al fichero y mostrará su contenid
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <script>
+            function cargar() {
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        document.getElementById("caja").innerHTML = this.responseText;
+                    }
+                };
+                xhttp.open("GET", "E1.txt", true);
+                xhttp.send();
+            }
+        </script>   
+    </head>
+    <body>
+        <div id="caja">
+            <button id="boton" type="button" onclick="cargar()">Cargar contenido</button>
+        </div>
+    </body>
+</html>
